@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get 'products/new', to: 'products#new'
   post '/products', to: 'products#create'
   get '/welcome', to: 'welcome#index'
+  get '/products/:id', to: 'products#show'
 end
