@@ -9,7 +9,8 @@ class ProductsController < ApplicationController
   	#params = {product:{ name: "..."....}, ...}
   	@product = Product.new(product_params)
   	if @product.save
-  		redirect_to '/products'
+  		#flash[:notice] = "El producto ha sido creado con éxito"
+  		redirect_to '/products', notice: "El producto ha sido creado con éxito"
   	else
   		render :new
   	end
