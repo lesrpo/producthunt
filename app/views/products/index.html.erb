@@ -3,7 +3,7 @@
 		<div class="col-sm-12">
 			<h1>Productos</h1>
 			<div class="text-right">
-				<a href="/products/new" class="btn btn-primary"><span class="glyphicon glyphicon-plus"> Nuevo producto</span></a>
+				<%= link_to "<span class='glyphicon glyphicon-plus'></span> Nuevo Producto".html_safe, new_product_path, class: "btn btn-primary" %>
 			</div>
 			<table class="table">
 				<thead>
