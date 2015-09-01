@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   post '/products', to: 'products#create'
   get '/welcome', to: 'welcome#index'
   get '/products/:id', to: 'products#show'
+  get '/products/:id/edit', to: 'products#edit'
+  patch '/products/:id', to: 'products#update'
 end
