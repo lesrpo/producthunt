@@ -12,6 +12,7 @@
 						<th>Nombre</th>
 						<th>URL</th>
 						<th>Descripción</th>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -21,6 +22,7 @@
 							<td><a href="/products/<%= product.id %>"><%= product.name %></a></td>
 							<td><%= product.url %></td>
 							<td><%= product.description %></td>
+							<td><a href="/products/<%= product.id %>/edit">Editar</a></td>
 						</tr>
 					<% end %>
 				</tbody>
