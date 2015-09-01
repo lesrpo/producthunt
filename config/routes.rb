@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   get '/welcome', to: 'welcome#index'
   get '/products/:id', to: 'products#show'
   get '/products/:id/edit', to: 'products#edit'
-  patch '/products/:id', to: 'products#update'
+  patch '/products/:id', to: 'products#update', as: 'product'
 end
