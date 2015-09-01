@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
   def new
   	@product = Product.new
   end
+  
   def create
   	#params = {product:{ name: "..."....}, ...}
   	@product = Product.new(product_params)
@@ -14,6 +15,10 @@ class ProductsController < ApplicationController
   	else
   		render :new
   	end
+  end
+
+  def show
+  	@product = Product.find(params[:id])
   end
 
   private
