@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'products#index'
+  resources :users, only: [:new,:create]
   # get 'products', to: 'products#index', as: :products
   # get 'products/new', to: 'products#new', as: :new_product
   # post '/products', to: 'products#create'
@@ -7,6 +9,4 @@ Rails.application.routes.draw do
   # patch '/products/:id', to: 'products#update', as: 'product'
   # delete '/products/:id', to: 'products#destroy'
   resources :products
-
-  get '/welcome', to: 'welcome#index'
 end
