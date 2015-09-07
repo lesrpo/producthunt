@@ -2,9 +2,11 @@
 	<div class="row">
 		<div class="col-sm-12">
 			<h1>Productos</h1>
-			<div class="text-right">
+			<% if signed_in? %>
+				<div class="text-right">
 				<%= link_to "<span class='glyphicon glyphicon-plus'></span> Nuevo Producto".html_safe, new_product_path, class: "btn btn-primary" %>
-			</div>
+				</div>
+			<% end %>
 			<table class="table">
 				<thead>
 					<tr>
@@ -23,8 +25,10 @@
 							<td><%= product.url %></td>
 							<td><%= product.description %></td>
 							<td>
-								<%= link_to "Editar", edit_product_path(product) %>
-								<%= link_to "Eliminar", product, method: :delete, data:{confirm: "Estas seguro de eliminar este producto"} %>
+								<% if signed_in? %>
+									<%= link_to "Editar", edit_product_path(product) %>
+									<%= link_to "Eliminar", product, method: :delete, data:{confirm: "Estas seguro de eliminar este producto"} %>
+								<% end %>
 							</td>
 						</tr>
 					<% end %>
