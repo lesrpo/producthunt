@@ -1,0 +1,26 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-6 col-sm-offset-3">
+			<h1>Crear Cuenta</h1>
+
+			<%= form_for @user do |f| %>
+				<div class="form-group">
+					<%= f.email_field :email, class: "form-control input-lg", placeholder:"Email" %>
+				</div>
+				<div class="form-group">
+					<%= f.password_field :password, class: "form-control input-lg", placeholder:"Contraseña"%>
+				</div>
+				<div class="form-group">
+					<%= f.text_field :name, class:"form-control input-lg", placeholder:"Nombre" %>
+				</div>
+				<div class="input-group input-group-lg">
+					<span class="input-group-addon" id="basic-addon1">@</span>
+					<%= f.text_field :twitter_handle, class:"form-control input-lg", placeholder:"Twitter" %>
+				</div>
+				<div class="actions">
+					<%= f.submit class:"btn btn-primary btn-block btn-lg"%>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
