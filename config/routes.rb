@@ -12,5 +12,7 @@ Rails.application.routes.draw do
   # get '/products/:id/edit', to: 'products#edit'
   # patch '/products/:id', to: 'products#update', as: 'product'
   # delete '/products/:id', to: 'products#destroy'
-  resources :products
+  resources :products do
+    resources :comments, only: [:create]
+  end
 end
