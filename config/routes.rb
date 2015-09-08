@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   # patch '/products/:id', to: 'products#update', as: 'product'
   # delete '/products/:id', to: 'products#destroy'
   resources :products do
+    resource :vote, only: [:create, :destroy]
     resources :comments, only: [:create]
   end
 end
