@@ -3,6 +3,18 @@
 		<div class="col-sm-6 col-sm-offset-3">
 			<h1>Crear Cuenta</h1>
 
+
+			<% if @user.errors.any? %>
+			<div class="alert alert-danger">
+				<ul>
+					<% @user.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+					<% end %>
+				</ul>
+			</div>
+			<% end %>
+
+
 			<%= form_for @user do |f| %>
 				<div class="form-group">
 					<%= f.email_field :email, class: "form-control input-lg", placeholder:"Email" %>
