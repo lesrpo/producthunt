@@ -11,7 +11,8 @@ class ProductsController < ApplicationController
   def create
   	#params = {product:{ name: "..."....}, ...}
   	@product = Product.new(product_params)
-  	if @product.save
+  	@product.user = current_user
+    if @product.save
   		#flash[:notice] = "El producto ha sido creado con éxito"
   		redirect_to products_path, notice: "El producto ha sido creado con éxito"
   	else
